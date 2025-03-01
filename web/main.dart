@@ -1,7 +1,8 @@
 import 'dart:js_interop';
 import 'dart:math';
-import 'package:web/web.dart' as web;
+
 import 'package:collection/collection.dart';
+import 'package:web/web.dart' as web;
 
 import 'package:react/hooks.dart';
 import 'package:react/react.dart';
@@ -55,7 +56,6 @@ typedef Um = ({int from, int to, num endFrameNum, bool spin});
 State init() => (frameNum: 0, pipes: [], um: (from: 2, to: 2, endFrameNum: 0, spin: false));
 
 
-
 //// EVOLUTION
 
 State update(State model, num delta) {
@@ -81,13 +81,9 @@ List<PipeRow> updatePipes(num frameNum, List<PipeRow> pipes) {
   }
 }
 
-bool toss() {
-  return Random().nextBool();
-}
+bool toss() => Random().nextBool();
 
-Pipe newPipe() {
-  return (n: toss(), s: toss(), e: toss(), w: toss());
-}
+Pipe newPipe() => (n: toss(), s: toss(), e: toss(), w: toss());
 
 PipeRow generatePipes(num y, PipeRow? prevRow) {
   var newRow = (
@@ -167,8 +163,8 @@ connected(List<Pipe> pipes, int start, int end) {
 //// VIEW
 
 view(State model) {
-  return div({}, svg({'viewbox': '0 0 480 400', 'width': '480', 'height': '400'},
-                     [pipeGrid(model.frameNum, model.pipes), umView(model.frameNum, model.um)]));
+  return div({}, svg({'viewBox': '0 0 480 400', 'width': '480', 'height': '400'},
+                     pipeGrid(model.frameNum, model.pipes), umView(model.frameNum, model.um)));
 }
 
 pipeGrid(num frameNum, List<PipeRow> rows) {
@@ -177,22 +173,22 @@ pipeGrid(num frameNum, List<PipeRow> rows) {
                  pipeCell(i + 0.5, boxY(row.y, frameNum), pipe))));
 }
 
-const ne = "M 6 0 L 6 3 A 1 1 0 0 0 7 4 L 10 4";
-const es = "M 6 10 L 6 7 A 1 1 0 0 1 7 6 L 10 6";
-const sw = "M 0 6 L 3 6 A 1 1 0 0 1 4 7 L 4 10";
-const wn = "M 0 4 L 3 4 A 1 1 0 0 0 4 3 L 4 0";
-const ns = "M 6 0 L 6 10";
-const sn = "M 4 0 L 4 10";
-const we = "M 0 4 L 10 4";
-const ew = "M 0 6 L 10 6";
-const neo = "M 4 0 L 4 5 A 1 1 0 0 0 5 6 L 10 6";
-const eso = "M 4 10 L 4 5 A 1 1 0 0 1 5 4 L 10 4";
-const swo = "M 0 4 L 5 4 A 1 1 0 0 1 6 5 L 6 10";
-const wno = "M 0 6 L 5 6 A 1 1 0 0 0 6 5 L 6 0";
-const nx = "M 4 0 L 4 3 L 6 3 L 6 0";
-const ex = "M 10 4 L 7 4 L 7 6 L 10 6";
-const sx = "M 6 10 L 6 7 L 4 7 L 4 10";
-const wx = "M 0 6 L 3 6 L 3 4 L 0 4";
+const ne = 'M 6 0 L 6 3 A 1 1 0 0 0 7 4 L 10 4';
+const es = 'M 6 10 L 6 7 A 1 1 0 0 1 7 6 L 10 6';
+const sw = 'M 0 6 L 3 6 A 1 1 0 0 1 4 7 L 4 10';
+const wn = 'M 0 4 L 3 4 A 1 1 0 0 0 4 3 L 4 0';
+const ns = 'M 6 0 L 6 10';
+const sn = 'M 4 0 L 4 10';
+const we = 'M 0 4 L 10 4';
+const ew = 'M 0 6 L 10 6';
+const neo = 'M 4 0 L 4 5 A 1 1 0 0 0 5 6 L 10 6';
+const eso = 'M 4 10 L 4 5 A 1 1 0 0 1 5 4 L 10 4';
+const swo = 'M 0 4 L 5 4 A 1 1 0 0 1 6 5 L 6 10';
+const wno = 'M 0 6 L 5 6 A 1 1 0 0 0 6 5 L 6 0';
+const nx = 'M 4 0 L 4 3 L 6 3 L 6 0';
+const ex = 'M 10 4 L 7 4 L 7 6 L 10 6';
+const sx = 'M 6 10 L 6 7 L 4 7 L 4 10';
+const wx = 'M 0 6 L 3 6 L 3 4 L 0 4';
 
 pipeCell(num x, num y, Pipe p) {
   final (:n, :s, :e, :w) = p;
@@ -218,7 +214,7 @@ pipeCell(num x, num y, Pipe p) {
 
 pathIf(String p, bool cond) {
   if (cond) {
-    return path({'d': p, 'stroke': 'blue', 'fill': 'none', 'strokeWidth': '0.2'});
+    return path({'d': p, 'stroke': 'blue', 'fill': 'none', 'strokeWidth': '0.2', 'key': p});
   } else {
     return null;
   }
@@ -231,7 +227,7 @@ umView(num frame, Um um) {
   final y = 70 + 80 * yUm(frame, um);
   final r = um.spin ? 360 * max(0, (((1 + horizTimeslice) * umParam(frame, um)) - horizTimeslice)) : 0;
   return foreignObject({'x': x, 'y': y, 'width': '100', 'height': '100', 'transform': rotation(r, x)},
-            [img({'src': umImg, 'width': '80', 'height': '80'})]);
+            img({'src': umImg, 'width': '80', 'height': '80'}));
 }
 
 num xUm(num frame, Um um) {
