@@ -169,7 +169,7 @@ view(State model) {
 
 pipeGrid(num frameNum, List<PipeRow> rows) {
   return svg({'x': '0', 'y': '0', 'width': '480', 'height': '400', 'viewBox': '0 0 6 3'},
-             rows.map((row) => row.pipes.mapIndexed((i, pipe) =>
+             rows.expand((row) => row.pipes.mapIndexed((i, pipe) =>
                  pipeCell(i + 0.5, boxY(row.y, frameNum), pipe))));
 }
 
