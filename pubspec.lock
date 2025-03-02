@@ -150,14 +150,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
-  clock:
-    dependency: transitive
-    description:
-      name: clock
-      sha256: fddb70d9b5277016c77a80201021d40a2247104d9f4aa7bab7157b7e3f05b84b
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.2"
   code_builder:
     dependency: transitive
     description:
@@ -270,14 +262,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.2"
-  intl:
-    dependency: transitive
-    description:
-      name: intl
-      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.18.1"
   io:
     dependency: transitive
     description:
@@ -350,14 +334,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
-  over_react:
-    dependency: "direct main"
-    description:
-      name: over_react
-      sha256: "9052c0c979811bd7ff35a145bd79de0da6f6f107017909826ed24fc9ee83b990"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.4.1"
   package_config:
     dependency: transitive
     description:
@@ -374,14 +350,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
-  platform_detect:
-    dependency: transitive
-    description:
-      name: platform_detect
-      sha256: "7394dc1d884e652785a37c3ff25c54e503c6d9fa2f35b55d5efc0a133dec122c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.5"
   pool:
     dependency: transitive
     description:
@@ -422,14 +390,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.0"
-  quiver:
-    dependency: transitive
-    description:
-      name: quiver
-      sha256: ea0b925899e64ecdfbf9c7becb60d5b50e706ade44a85b2363be2a22d88117d2
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.2.2"
   react:
     dependency: "direct main"
     description:
@@ -438,22 +398,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.2.0"
-  redux:
-    dependency: transitive
-    description:
-      name: redux
-      sha256: "1e86ed5b1a9a717922d0a0ca41f9bf49c1a587d50050e9426fc65b14e85ec4d7"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.0.0"
-  redux_dev_tools:
-    dependency: transitive
-    description:
-      name: redux_dev_tools
-      sha256: "98d248a7699494efe6b8d64f61e01c2bafb9edb1c56b89fa083573008061a4a8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.7.0"
   scratch_space:
     dependency: transitive
     description:
@@ -550,14 +494,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.2"
-  transformer_utils:
-    dependency: transitive
-    description:
-      name: transformer_utils
-      sha256: "2fffc3cd42cabc7ce6d4e4bab734b90f01404ae1fe85c32f17f570c4f24ec42c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.22"
   typed_data:
     dependency: transitive
     description:
@@ -566,22 +502,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
-  w_common:
-    dependency: transitive
-    description:
-      name: w_common
-      sha256: "4daab34b1c414a2d3e3881ac53c473587b30961e0432acc4474e45dc5f48ea1e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.2.0"
-  w_flux:
-    dependency: transitive
-    description:
-      name: w_flux
-      sha256: "2500ba30a908dc1d0cb1bb9ff6e1b27937eacd0b63ba145ad9b058fb1347eaa5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.1"
   watcher:
     dependency: transitive
     description:
